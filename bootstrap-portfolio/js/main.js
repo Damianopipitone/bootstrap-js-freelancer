@@ -11,7 +11,7 @@ const projectAnalysisPrice = 33.60;
 
 // Questi codici offrono uno sconto del 25%
 
-const discountCode = ["YHDNU32","JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]; 
+const disocuntCodes = ["YHDNU32","JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]; 
 
 function onSubmitForm(event) {
     event.preventDefault();
@@ -57,11 +57,18 @@ function onSubmitForm(event) {
 
     let discountCodeUser = document.getElementById("coupon").value;
 
-    let isDiscountCodeAvailable = disocuntCode.includes(discountCodeUser);
+    let isDiscountCodeAvailable = disocuntCodes.includes(discountCodeUser);
 
     if (isDiscountCodeAvailable && selectedTypeWork == "backend") {
         let scountedPriceBackEnd = ((backEndPrice * inputHours) * 0.75).toFixed(2);
+        console.log(scountedPriceBackEnd);
 
+    } else if (isDiscountCodeAvailable && selectedTypeWork == "frontend") {
+        let scountedPriceFrontEnd = ((frontEndPrice * inputHours) * 0.75).toFixed(2);
+        console.log(scountedPriceFrontEnd);
+    
+    } else {
+        let scountedPriceAnalysis = ((projectAnalysisPrice * inputHours) * 0.75).toFixed(2);
     }
   
 
