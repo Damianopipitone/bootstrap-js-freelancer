@@ -28,7 +28,12 @@ function onSubmitForm(event) {
             break;
     }
 
-    
+    let inputHours = document.getElementById("hours").value;
+    console.log(inputHours);
+
+    if (isNaN(inputHours) || inputHours == "") {
+        alert("Devi inserie un numero di ore");
+    }
 
 }
 
