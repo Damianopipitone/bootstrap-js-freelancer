@@ -72,7 +72,7 @@ function onSubmitForm(event) {
         console.log(scountedPriceAnalysis);
     }
   
-    if (discountCodeUser != isDiscountCodeAvailable) {
+    if (discountCodeUser == "") {
         alert("Il codice inserito non è valido");
 
     }
