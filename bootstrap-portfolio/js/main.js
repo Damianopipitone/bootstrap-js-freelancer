@@ -50,7 +50,7 @@ function onSubmitForm(event) {
         let frontEndFinalPrice = (frontEndPrice * inputHours).toFixed(2);
         console.log(frontEndFinalPrice);
 
-    } else {
+    } else if (selectedTypeWork == "analysis") {
         let projectAnalysisFinalPrice = (projectAnalysisPrice * inputHours).toFixed(2);
         console.log(projectAnalysisFinalPrice);
     }
@@ -67,12 +67,26 @@ function onSubmitForm(event) {
         let scountedPriceFrontEnd = ((frontEndPrice * inputHours) * 0.75).toFixed(2);
         console.log(scountedPriceFrontEnd);
     
-    } else {
+    } else if (isDiscountCodeAvailable && selectedTypeWork == "analysis") {
         let scountedPriceAnalysis = ((projectAnalysisPrice * inputHours) * 0.75).toFixed(2);
+        console.log(scountedPriceAnalysis);
     }
   
+    if (discountCodeUser != isDiscountCodeAvailable) {
+        alert("Il codice inserito non è valido");
+
+    }
 
 }
 
 
 
+function removeElementFromArray(array, elementToRemove){
+
+    const index = array.indexOf(elementToRemove);
+
+    array.splice(index, 1);
+
+    return array;
+
+}
