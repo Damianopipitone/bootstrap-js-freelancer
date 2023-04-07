@@ -3,10 +3,33 @@
 // 2. Inserire i codici sconto del 25% e fare in modo di usarne solo una volta per codice
 // 3. Quando si preme send viene fuori il prezzo finale del preventivo
 
-const backEndPrice = (20,50);
+const backEndPrice = 20.50;
 
-const frontEndPrice = (15,30);
+const frontEndPrice = 15.30;
 
-const projectAnalysisPrice = (33,60);
+const projectAnalysisPrice = 33.60;
+
+function onSubmitForm(event) {
+    event.preventDefault();
+    
+    let selectedTypeWork = document.getElementById("work-type").value;
+    
+    console.log(selectedTypeWork);
+
+    switch (selectedTypeWork) {
+        case "backend":
+            console.log(backEndPrice.toFixed(2) + "€" + " l'ora");
+            break;
+        case "frontend":
+            console.log(frontEndPrice.toFixed(2));
+            break;
+        case "analysis":
+            console.log(projectAnalysisPrice.toFixed(2));
+            break;
+    }
+
+    
+
+}
 
 
